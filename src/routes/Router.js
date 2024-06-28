@@ -12,6 +12,7 @@ import Kakaologin from "../component/login/login_main";
 import Uploadmain from "../component/upload/upload_main";
 import Redirection from '../component/login/redirection';
 import Makermain from '../component/maker/madeby';
+import Buy from '../component/register/buy';
 
 const Background = styled.div`
     background-color: #F8F9FA;
@@ -85,6 +86,7 @@ function AppRouter() {
                         <Route path="/kakao_login" element={<Kakaologin />} />
                         <Route path="/aboutus" element={<Makermain />} />
                         <Route path="/oauth" element={<Redirection />} />
+                        <Route path="/buy" element={<Buy />} />
                     </Routes>
                     <Footerindex />
                 </Rectangle>
