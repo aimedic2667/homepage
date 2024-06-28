@@ -85,22 +85,20 @@ function AppRouter() {
     }, [location.pathname]);
 
     return (
-        <Router>
-            <Background>
-                <Rectangle>
-                    {!hideHeaderAndFooter && (hasToken ? <Headerlogin name={userName} /> : <Headerindex />)}
-                    <Routes>
-                        <Route path="/" element={<Mainindex />} />
-                        <Route path="/upload" element={<Uploadmain />} />
-                        <Route path="/kakao_login" element={<Kakaologin />} />
-                        <Route path="/aboutus" element={<Makermain />} />
-                        <Route path="/oauth" element={<Redirection />} />
-                        <Route path="/buy" element={<Buy />} />
-                    </Routes>
-                    {!hideHeaderAndFooter && <Footerindex />}
-                </Rectangle>
-            </Background>
-        </Router>
+        <Background>
+            <Rectangle>
+                {!hideHeaderAndFooter && (hasToken ? <Headerlogin name={userName} /> : <Headerindex />)}
+                <Routes>
+                    <Route path="/" element={<Mainindex />} />
+                    <Route path="/upload" element={<Uploadmain />} />
+                    <Route path="/kakao_login" element={<Kakaologin />} />
+                    <Route path="/aboutus" element={<Makermain />} />
+                    <Route path="/oauth" element={<Redirection />} />
+                    <Route path="/buy" element={<Buy />} />
+                </Routes>
+                {!hideHeaderAndFooter && <Footerindex />}
+            </Rectangle>
+        </Background>
     );
 }
 
