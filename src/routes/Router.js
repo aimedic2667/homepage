@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { Routes, Route, useLocation} from 'react-router-dom';
 import axios from 'axios';
 
 import Headerlogin from "../component/login/login_header";
@@ -35,8 +35,12 @@ const Rectangle = styled.div`
 
 
 function AppRouter() {
+    // UseState
     const [hasToken, setHasToken] = useState(false);
     const [userName, setUserName] = useState('');
+    // Etc
+    const location = useLocation();
+    const hideHeaderAndFooter = location.pathname === '/oauth';
 
     const parseJwt = (token) => {
         var base64Url = token.split('.')[1];
@@ -73,13 +77,18 @@ function AppRouter() {
     useEffect(() => {
         checkHasToken();
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [hasToken]);
+    }, []);
+
+    useEffect(() => {
+        checkHasToken();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [location.pathname]);
 
     return (
         <Router>
             <Background>
                 <Rectangle>
-                    {hasToken ? <Headerlogin name={userName} /> : <Headerindex />}
+                    {!hideHeaderAndFooter && (hasToken ? <Headerlogin name={userName} /> : <Headerindex />)}
                     <Routes>
                         <Route path="/" element={<Mainindex />} />
                         <Route path="/upload" element={<Uploadmain />} />
@@ -88,7 +97,7 @@ function AppRouter() {
                         <Route path="/oauth" element={<Redirection />} />
                         <Route path="/buy" element={<Buy />} />
                     </Routes>
-                    <Footerindex />
+                    {!hideHeaderAndFooter && <Footerindex />}
                 </Rectangle>
             </Background>
         </Router>
