@@ -8,6 +8,8 @@ import Bed from '../../images/Bed.png';
 import Light from '../../images/LightBulb.png';
 import Warning from '../../images/Warning.png';
 
+import { useNavigate } from 'react-router-dom';
+
 const Text1 = styled.div`
     width: 100%;
     height: 10%;
@@ -195,6 +197,13 @@ const Textoffice = styled.div`
 `;
 
 const Uploadmain = () => {
+
+    const navigate = useNavigate();
+    
+    function navigateTobuy(){
+        navigate('/buy');
+    }
+
     return (
         <>
             <Text1>매물 올리기</Text1>
@@ -208,21 +217,21 @@ const Uploadmain = () => {
                 <Text3>* 매물 등록 가이드 보기</Text3>
             </Rectangle2>
             <Section1>
-                <Rectangle4>
+                <Rectangle4 onClick={navigateTobuy}>
                     <img src = {Apart} alt = "아파트" />
                     <Textapart>아파트</Textapart>
                 </Rectangle4>
-                <Rectangle5>
+                <Rectangle5 onClick={navigateTobuy}>
                     <img src = {House} alt = "빌라,주택" />
                     <Texthouse>빌라,주택</Texthouse>
                 </Rectangle5>
             </Section1>
             <Section2>
-                <Rectangle6>
+                <Rectangle6 onClick={navigateTobuy}>
                     <img src = {Bed} alt = "오피스텔" />
                     <Textbed>오피스텔</Textbed>
                 </Rectangle6>
-                <Rectangle7>
+                <Rectangle7 onClick={navigateTobuy}>
                     <img src = {office} alt = "상가,사무실" />
                     <Textoffice>상가,사무실</Textoffice>
                 </Rectangle7>
