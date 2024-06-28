@@ -14,7 +14,7 @@ import Redirection from '../component/login/redirection';
 import Makermain from '../component/maker/madeby';
 import Buy from '../component/register/buy';
 import Apartsafe from '../component/trade/apartsafe';
-import TheaterLocation from '../component/map/kakaomap';
+import KakaoMap from '../component/map/kakaomap';
 
 const Background = styled.div`
     background-color: #F8F9FA;
@@ -99,7 +99,7 @@ function AppRouter() {
                     <Route path="/oauth" element={<Redirection />} />
                     <Route path="/buy" element={<Buy />} />
                     <Route path="/apartsafe" element={<Apartsafe />} />
-                    <Route path="/map" element={<TheaterLocation />} />
+                    <Route path="/map" element={<KakaoMap />} />
                 </Routes>
                 {!hideHeaderAndFooter && <Footerindex />}
             </Rectangle>
