@@ -13,6 +13,7 @@ import Uploadmain from "../component/upload/upload_main";
 import Redirection from '../component/login/redirection';
 import Makermain from '../component/maker/madeby';
 import Buy from '../component/register/buy';
+import Apartsafe from '../component/trade/apartsafe';
 
 const Background = styled.div`
     background-color: #F8F9FA;
@@ -28,6 +29,7 @@ const Rectangle = styled.div`
   width: 60%;
   max-width: 100%;
   height: 100vh;
+  overflow: auto;
   margin: 0 auto; /* 마진: 0(상하) auto(좌우 마진값 오토로 가운데 정렬) */
   background-color: #FFFFFF;
   z-index: -3;
@@ -87,6 +89,7 @@ function AppRouter() {
                         <Route path="/aboutus" element={<Makermain />} />
                         <Route path="/oauth" element={<Redirection />} />
                         <Route path="/buy" element={<Buy />} />
+                        <Route path="/apartsafe" element={<Apartsafe />} />
                     </Routes>
                     <Footerindex />
                 </Rectangle>
