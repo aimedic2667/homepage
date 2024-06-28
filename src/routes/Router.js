@@ -14,6 +14,7 @@ import Redirection from '../component/login/redirection';
 import Makermain from '../component/maker/madeby';
 import Buy from '../component/register/buy';
 import Apartsafe from '../component/trade/apartsafe';
+import TheaterLocation from '../component/map/kakaomap';
 
 const Background = styled.div`
     background-color: #F8F9FA;
@@ -42,7 +43,7 @@ function AppRouter() {
     const [userName, setUserName] = useState('');
     // Etc
     const location = useLocation();
-    const hideHeaderAndFooter = location.pathname === '/oauth';
+    const hideHeaderAndFooter = location.pathname === '/map';
 
     const parseJwt = (token) => {
         var base64Url = token.split('.')[1];
@@ -98,6 +99,7 @@ function AppRouter() {
                     <Route path="/oauth" element={<Redirection />} />
                     <Route path="/buy" element={<Buy />} />
                     <Route path="/apartsafe" element={<Apartsafe />} />
+                    <Route path="/map" element={<TheaterLocation />} />
                 </Routes>
                 {!hideHeaderAndFooter && <Footerindex />}
             </Rectangle>
