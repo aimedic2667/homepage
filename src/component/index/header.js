@@ -31,7 +31,11 @@ const Titlename = styled.div`
 
     margin-right : 5%;
 
-    cursor: pointer; 
+    cursor: pointer;
+    &:hover {
+        background-color: #19254D;
+        color: white;
+    } 
 `;
 
 const Titlelogin = styled.div`
