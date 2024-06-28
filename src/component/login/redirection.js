@@ -16,7 +16,7 @@ const Redirection = () => {
             localStorage.setItem('access_token', accessToken)
             // refresh 토큰은 쿠키에 저장
             document.cookie = `refresh_token=${refreshToken}; path/;`;
-            navigate('/')
+            navigate('/');
         })
         .catch(error => {
             console.error("오류났음", error); 
