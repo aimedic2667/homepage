@@ -14,7 +14,10 @@ import Redirection from '../component/login/redirection';
 import Makermain from '../component/maker/madeby';
 import Buy from '../component/register/buy';
 import Apartsafe from '../component/trade/apartsafe';
+// 테스트
 import KakaoMap from '../component/map/kakaomap';
+import BoardDetail from '../component/board/BoardDetail';
+import BoardList from '../component/board/BoardList';
 
 const Background = styled.div`
     background-color: #F8F9FA;
@@ -80,11 +83,6 @@ function AppRouter() {
     useEffect(() => {
         checkHasToken();
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
-
-    useEffect(() => {
-        checkHasToken();
-        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [location.pathname]);
 
     return (
@@ -100,6 +98,8 @@ function AppRouter() {
                     <Route path="/buy" element={<Buy />} />
                     <Route path="/apartsafe" element={<Apartsafe />} />
                     <Route path="/map" element={<KakaoMap />} />
+                    <Route path="/board" element={<BoardList/>}/>
+                    <Route path="/board/:idx" element={<BoardDetail/>}/>
                 </Routes>
                 {!hideHeaderAndFooter && <Footerindex />}
             </Rectangle>
