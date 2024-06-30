@@ -14,6 +14,7 @@ import Redirection from '../component/login/redirection';
 import Makermain from '../component/maker/madeby';
 import Buy from '../component/register/buy';
 import Apartsafe from '../component/trade/apartsafe';
+import Apartdangerous from '../component/trade/apartdangerous';
 // 테스트
 import KakaoMap from '../component/map/kakaomap';
 import BoardDetail from '../component/board/BoardDetail';
@@ -97,6 +98,7 @@ function AppRouter() {
                     <Route path="/oauth" element={<Redirection />} />
                     <Route path="/buy" element={<Buy />} />
                     <Route path="/apartsafe" element={<Apartsafe />} />
+                    <Route path="/apartdangerous" element={<Apartdangerous />} />
                     <Route path="/map" element={<KakaoMap />} />
                     <Route path="/board" element={<BoardList/>}/>
                     <Route path="/board/:idx" element={<BoardDetail/>}/>
