@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import Board from './Board';
+import SafePage from './safe';
 
 
 const BoardDetail = () => {
@@ -20,11 +20,11 @@ const BoardDetail = () => {
     }, []);
   
     return (
-        <div>
+        <>
           {loading ? (
             <h2>loading...</h2>
           ) : (
-            <Board
+            <SafePage
               title={board.title}
               content={board.content}
               price={board.price}
@@ -38,7 +38,7 @@ const BoardDetail = () => {
               images={board.images}
             />
           )}
-        </div>
+        </>
     );
 };
 
