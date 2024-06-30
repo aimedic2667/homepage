@@ -80,7 +80,7 @@ const Text2 = styled.div`
 
 /* 등기부등본을 요약해본 결과~ 박스 */
 const Summary = styled.div`
-    background-color: #EBFBEE;
+    background-color: #FFF5F5;
     width: 60%;
     height: 20%;
     border-radius: 24px;
@@ -88,7 +88,7 @@ const Summary = styled.div`
 `
 
 const Text3 = styled.div`
-    color: #2B8A3E;
+    color: #CE3C3C;
     font-family: "Spoqa Han Sans Neo";
     font-size: 1.2vw;
     font-style: normal;
@@ -207,7 +207,7 @@ const Blank = styled.div`
     background-color: #FFFFFF;
 `
 
-const Apartsafe = () => {
+const Apartdangerous = () => {
     return (
         <>
             <Text1>부동산 게시글
@@ -222,7 +222,7 @@ const Apartsafe = () => {
             <Text2>신축 화이트톤 깔끔한 투룸, 시청역 5분 거리</Text2>
             <Summary>
                 <Text3>0inbye에서 이 집에 등기부등본을 요약해본 결과</Text3>
-                <Text3>'안전합니다'</Text3>
+                <Text3>'위험합니다'</Text3>
                 <Summaryrectangle>
                     <Img src={summary} alt="summary"></Img>
                     <Textsummary className="Textsummary">자세한 요약 확인하기</Textsummary>
@@ -309,7 +309,6 @@ const Apartsafe = () => {
 
             {/* 지도 */}
             <KakaoMap />
-            
 
             <Blank></Blank>
        
@@ -317,4 +316,4 @@ const Apartsafe = () => {
     );
 }
 
-export default Apartsafe;
+export default Apartdangerous;
