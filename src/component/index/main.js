@@ -240,6 +240,9 @@ const Mainindex = () => {
     function navigateToupload(){
         navigate('/upload');
     }
+    function navigateToboard(){
+        navigate('/board');
+    }
 
     return (
         <>
@@ -256,7 +259,7 @@ const Mainindex = () => {
             </Rectangle2>
             <Rectangle3 onClick={navigateToupload}>매물 올리기</Rectangle3>
             <Section1>
-                <Rectangle4>
+                <Rectangle4 onClick={navigateToboard}>
                     <img src = {Apart} alt = "아파트" />
                     <Textapart>아파트</Textapart>
                 </Rectangle4>
