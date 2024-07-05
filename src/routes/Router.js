@@ -15,6 +15,7 @@ import Makermain from '../component/maker/madeby';
 import Buy from '../component/register/buy';
 import BoardDetail from '../component/board/BoardDetail';
 import BoardList from '../component/board/BoardList';
+import List from '../component/trade/list'
 // 테스트
 import KakaoMap from '../component/map/kakaomap';
 
@@ -98,6 +99,7 @@ function AppRouter() {
                     <Route path="/map" element={<KakaoMap />} />
                     <Route path="/board" element={<BoardList/>}/>
                     <Route path="/board/:idx" element={<BoardDetail/>}/>
+                    <Route path="/list" element={<List/>}/>
                 </Routes>
                 {!hideHeaderAndFooter && <Footerindex />}
             </Rectangle>
