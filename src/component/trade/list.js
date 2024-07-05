@@ -202,6 +202,13 @@ const Blank = styled.div`
     margin: 0 auto; /*마진 : 0(상하) auto(좌우 마진값 오토로 가운데 정렬)*/
     background-color: #FFFFFF;
 `
+// 반복문 배열
+const items = new Array(5).fill({
+    cost: '월세 ****/****원',
+    apartName: '아파트 이름',
+    description: '층 | 면적',
+    title: '한남역 10분 거리, 보증 보험 가능, 반려동물 가능'
+});
 
 const List = () => {
     return (
@@ -225,96 +232,19 @@ const List = () => {
             </Search>
             <Stroke2></Stroke2>
 
-            <Section1>
-                {/* 1 */}
-                <Thumbnail>
-                    <Image></Image>
-                    <Cost>월세 ****/****원</Cost>
-                    <Apartname>아파트 이름</Apartname>
-                    <Description>층 | 면적</Description>
-                    <Title>한남역 10분 거리, 보증 보험 가능, 반려동물 가능</Title>
-                </Thumbnail>
-                {/* 2 */}
-                <Thumbnail>
-                    <Image></Image>
-                    <Cost>월세 ****/****원</Cost>
-                    <Apartname>아파트 이름</Apartname>
-                    <Description>층 | 면적</Description>
-                    <Title>한남역 10분 거리, 보증 보험 가능, 반려동물 가능</Title>
-                </Thumbnail>
-            </Section1>
-            <Section1>
-                {/* 3 */}
-                <Thumbnail>
-                    <Image></Image>
-                    <Cost>월세 ****/****원</Cost>
-                    <Apartname>아파트 이름</Apartname>
-                    <Description>층 | 면적</Description>
-                    <Title>한남역 10분 거리, 보증 보험 가능, 반려동물 가능</Title>
-                </Thumbnail>
-                {/* 4 */}
-                <Thumbnail>
-                    <Image></Image>
-                    <Cost>월세 ****/****원</Cost>
-                    <Apartname>아파트 이름</Apartname>
-                    <Description>층 | 면적</Description>
-                    <Title>한남역 10분 거리, 보증 보험 가능, 반려동물 가능</Title>
-                </Thumbnail>
-            </Section1>
-            <Section1>
-                {/* 5 */}
-                <Thumbnail>
-                    <Image></Image>
-                    <Cost>월세 ****/****원</Cost>
-                    <Apartname>아파트 이름</Apartname>
-                    <Description>층 | 면적</Description>
-                    <Title>한남역 10분 거리, 보증 보험 가능, 반려동물 가능</Title>
-                </Thumbnail>
-                {/* 6 */}
-                <Thumbnail>
-                    <Image></Image>
-                    <Cost>월세 ****/****원</Cost>
-                    <Apartname>아파트 이름</Apartname>
-                    <Description>층 | 면적</Description>
-                    <Title>한남역 10분 거리, 보증 보험 가능, 반려동물 가능</Title>
-                </Thumbnail>
-            </Section1>
-            <Section1>
-                {/* 7 */}
-                <Thumbnail>
-                    <Image></Image>
-                    <Cost>월세 ****/****원</Cost>
-                    <Apartname>아파트 이름</Apartname>
-                    <Description>층 | 면적</Description>
-                    <Title>한남역 10분 거리, 보증 보험 가능, 반려동물 가능</Title>
-                </Thumbnail>
-                {/* 8 */}
-                <Thumbnail>
-                    <Image></Image>
-                    <Cost>월세 ****/****원</Cost>
-                    <Apartname>아파트 이름</Apartname>
-                    <Description>층 | 면적</Description>
-                    <Title>한남역 10분 거리, 보증 보험 가능, 반려동물 가능</Title>
-                </Thumbnail>
-            </Section1>
-            <Section1>
-                {/* 9 */}
-                <Thumbnail>
-                    <Image></Image>
-                    <Cost>월세 ****/****원</Cost>
-                    <Apartname>아파트 이름</Apartname>
-                    <Description>층 | 면적</Description>
-                    <Title>한남역 10분 거리, 보증 보험 가능, 반려동물 가능</Title>
-                </Thumbnail>
-                {/* 10 */}
-                <Thumbnail>
-                    <Image></Image>
-                    <Cost>월세 ****/****원</Cost>
-                    <Apartname>아파트 이름</Apartname>
-                    <Description>층 | 면적</Description>
-                    <Title>한남역 10분 거리, 보증 보험 가능, 반려동물 가능</Title>
-                </Thumbnail>
-            </Section1>
+            {items.map((item, index) => (
+                <Section1 key={index}>
+                    {[...Array(2)].map((_, i) => (
+                        <Thumbnail key={i}>
+                            <Image />
+                            <Cost>{item.cost}</Cost>
+                            <Apartname>{item.apartName}</Apartname>
+                            <Description>{item.description}</Description>
+                            <Title>{item.title}</Title>
+                        </Thumbnail>
+                    ))}
+                </Section1>
+            ))}
 
             <Blank></Blank>
         </>
