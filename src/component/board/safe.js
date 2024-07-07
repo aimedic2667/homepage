@@ -149,6 +149,51 @@ const Textsummary = styled.div`
     line-height: normal;
 `
 
+const Section2 = styled.div`
+    width: 60%;
+    height: 7%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    color: #black;
+    font-family: "Spoqa Han Sans Neo";
+    font-size: 1.2vw;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+`
+
+const Chatbotton = styled.div`
+    background-color: #D0EBFF;
+    width: 40%;
+    height: 60%;
+    border-radius: 24px;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    cursor: pointer;
+
+    
+    &:hover {
+        background-color: #19254D;
+            .Textsummary {
+                color: white;
+                }
+    }
+`
+const Chattext = styled.div`
+    color: #1864AB;
+    font-family: "Spoqa Han Sans Neo";
+    font-size: 1.2vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+`
+
 /* 거래정보, 관리비~ 칸*/
 const Texta = styled.div`
     width: 60%;
@@ -159,7 +204,6 @@ const Texta = styled.div`
     font-weight: 400;
     line-height: normal;
     margin: 0 auto;
-
     margin-top: 2%;
 `
 
@@ -245,6 +289,13 @@ const SafePage = ({ title, content, price, region, address, size, direction, ava
                     <Textsummary className="Textsummary">자세한 요약 확인하기</Textsummary>
                 </Summaryrectangle>
             </Summary>
+            {/* 채팅하기 */}
+            <Section2>
+                매물이 마음에 드시나요?
+                <Chatbotton>
+                    <Chattext>채팅하기</Chattext>
+                </Chatbotton>
+            </Section2>
             {/* 설명 */}
             <Texta>매물 소개글</Texta>
             <Explanation>{content}</Explanation>
