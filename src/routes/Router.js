@@ -16,8 +16,7 @@ import Buy from '../component/register/buy';
 import BoardDetail from '../component/board/BoardDetail';
 import BoardList from '../component/board/BoardList';
 import List from '../component/trade/list'
-// 테스트
-import KakaoMap from '../component/map/kakaomap';
+import UpBoard from '../component/boardup/Upboard';
 
 const Background = styled.div`
     background-color: #F8F9FA;
@@ -96,10 +95,10 @@ function AppRouter() {
                     <Route path="/aboutus" element={<Makermain />} />
                     <Route path="/oauth" element={<Redirection />} />
                     <Route path="/buy" element={<Buy />} />
-                    <Route path="/map" element={<KakaoMap />} />
                     <Route path="/board" element={<BoardList/>}/>
                     <Route path="/board/:idx" element={<BoardDetail/>}/>
                     <Route path="/list" element={<List/>}/>
+                    <Route path="/upboard" element={<UpBoard/>}/>
                 </Routes>
                 {!hideHeaderAndFooter && <Footerindex />}
             </Rectangle>
